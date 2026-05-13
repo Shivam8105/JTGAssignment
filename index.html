@@ -1,36 +1,436 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/logo.png" alt="logo">
-            </div>
-            <ul class="nav-links">
-                <li><a class="active" href="#">Home</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Education</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Recommendations</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.png" alt="logo" />
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+      <div class="menu" id="menu">
+        <a class="active" href="#"><b>Home</b></a>
+        <a href="#"><b>Skills</b></a>
+        <a href="#"><b>Education</b></a>
+        <a href="#"><b>Projects</b></a>
+        <a href="#"><b>Recommendations</b></a>
+        <a href="#"><b>Contact</b></a>
+      </div>
+    </nav>
+
     <section class="hero">
-        <div class="hero-left">
-            <h1>I'm Rayan Adlrdard <br> <span>Front-end</span> Developer</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, quos.</p>
-            <button class="hire-btn">Hire Me</button>
-        </div>
-        <div class="hero-right">
-            <img src="images/hero_image.png" alt="hero_image">
-        </div>
+      <div class="hero-text">
+        <h1>
+          I'm Rayan Aldrard <br />
+          <span>Front-end</span> Developer
+        </h1>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
+          laborum.
+        </p>
+
+        <button>HIRE ME →</button>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/hero_image.png" alt="hero image" />
+      </div>
     </section>
-</body>
+
+    <section class="projects">
+      <div class="projects-title">
+        <h1>Projects</h1>
+        <p>
+          Amet Minim Mollit Non Deserunt Ullamco Est Sit Aliqua Dolor Do Amet
+          Sint. Velit Officia Consequat Duis Enim Velit Mollit. Lorem Ipsum
+        </p>
+      </div>
+
+      <div class="project-container">
+        <div class="card">
+          <img src="images/card_1.jpg" alt="project" />
+          <div class="card-content">
+            <h2>How To Make Flyer Design</h2>
+            <p>
+              Lorem Ipsum Dolor Sit Amet, Consec Adipisicing Elit Awd And Lorem
+              Ipsum...
+            </p>
+            <div class="tags">
+              <span>Typescript</span><span>ReactJs</span><span>NextJs</span>
+              <span>CSS</span><span>HTML</span><span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/card_2.jpg" alt="project" />
+          <div class="card-content">
+            <h2>Web Development</h2>
+            <p>
+              Lorem Ipsum Dolor Sit Amet, Consec Adipisicing Elit Awd And Lorem
+              Ipsum...
+            </p>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              <span>Bootstrap</span><span>API</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/card_3.jpg" alt="project" />
+          <div class="card-content">
+            <h2>Software Development</h2>
+            <p>
+              Lorem Ipsum Dolor Sit Amet, Consec Adipisicing Elit Awd And Lorem
+              Ipsum...
+            </p>
+            <div class="tags">
+              <span>ReactJs</span><span>NodeJs</span><span>MongoDB</span
+              ><span>Express</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/card_4.jpg" alt="project" />
+          <div class="card-content">
+            <h2>Portfolio Website</h2>
+            <p>
+              Lorem Ipsum Dolor Sit Amet, Consec Adipisicing Elit Awd And Lorem
+              Ipsum...
+            </p>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span
+              ><span>Figma</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/card_5.jpg" alt="project" />
+          <div class="card-content">
+            <h2>E-Commerce Website</h2>
+            <p>
+              Lorem Ipsum Dolor Sit Amet, Consec Adipisicing Elit Awd And Lorem
+              Ipsum...
+            </p>
+            <div class="tags">
+              <span>NextJs</span><span>Tailwind</span><span>Firebase</span
+              ><span>API</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/card_6.jpg" alt="project" />
+          <div class="card-content">
+            <h2>Dashboard UI</h2>
+            <p>
+              Lorem Ipsum Dolor Sit Amet, Consec Adipisicing Elit Awd And Lorem
+              Ipsum...
+            </p>
+            <div class="tags">
+              <span>ReactJs</span><span>ChartJs</span><span>CSS</span
+              ><span>UI/UX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sliderSection" id="recommendations">
+      <div class="reco-title">
+        <h1>Recommendations</h1>
+        <p>
+          Amet Minim Mollit Non Deserunt Ullamco Est Sit Aliqua Dolor Do Amet
+          Sint. Velit Officia Consequat Duis Enim Velit Mollit. Lorem Ipsum
+        </p>
+      </div>
+
+      <div class="slider">
+        <button class="btn" id="prevBtn" aria-label="Previous">‹</button>
+
+        <div class="sliderWindow">
+          <div class="sliderTrack" id="sliderTrack">
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Great Quality!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+              <div class="profile">
+                <img src="images/caraousel_1.jpg" alt="profile" />
+                <div>
+                  <div class="name">James Gouse</div>
+                  <div class="role">Graphic Designer</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Amazing Work!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+              <div class="profile">
+                <img src="images/caraousel_2.jpg" alt="profile" />
+                <div>
+                  <div class="name">Tiana Philips</div>
+                  <div class="role">Photographer</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Great Quality!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+              <div class="profile">
+                <img src="images/caraousel_3.jpg" alt="profile" />
+                <div>
+                  <div class="name">Talan Westervelt</div>
+                  <div class="role">Business Man</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Nice Support!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+              <div class="profile">
+                <img src="images/caraousel_1.jpg" alt="profile" />
+                <div>
+                  <div class="name">John Smith</div>
+                  <div class="role">UI Designer</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Excellent Communication!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+
+              <div class="profile">
+                <img src="images/caraousel_2.jpg" alt="profile" />
+                <div>
+                  <div class="name">Sarah Connor</div>
+                  <div class="role">Product Manager</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Very Professional!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+
+              <div class="profile">
+                <img src="images/caraousel_3.jpg" alt="profile" />
+                <div>
+                  <div class="name">Michael Lee</div>
+                  <div class="role">Full Stack Developer</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Fast Delivery!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+
+              <div class="profile">
+                <img src="images/caraousel_3.jpg" alt="profile" />
+                <div>
+                  <div class="name">Ayesha Rahman</div>
+                  <div class="role">UI/UX Designer</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <h2>Highly Recommended!</h2>
+              <p>
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Vitae
+                Nulla Diam In Ac Dictum A Urna Viverra Morbi. Morbi Donec
+                Amet....
+              </p>
+              <div class="profile">
+                <img src="images/caraousel_1.jpg" alt="profile" />
+                <div>
+                  <div class="name">David Miller</div>
+                  <div class="role">Business Owner</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn" id="nextBtn" aria-label="Next">›</button>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </section>
+    <section class="contactSection" id="contact">
+      <div class="contactGrid">
+        <!-- LEFT: Form -->
+        <div class="formCol">
+          <h1>Leave ME Your Info</h1>
+
+          <form class="form">
+            <label>Your Full Name ( Required )</label>
+            <input type="text" required />
+
+            <label>Your Email ( Required )</label>
+            <input type="email" required />
+
+            <label>Subject</label>
+            <input type="text" />
+
+            <label>Your Message</label>
+            <textarea rows="10"></textarea>
+
+            <button type="submit">SEND MESSAGE</button>
+          </form>
+        </div>
+        <div class="infoCol">
+          <h1>Contact Information</h1>
+
+          <div class="infoBox">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            </div>
+            <div class="row"><span>Country:</span><span>Bangladesh</span></div>
+            <div class="row"><span>City:</span><span>Dhaka</span></div>
+            <div class="row">
+              <span>Street:</span><span>35 Vhatara, Badda</span>
+            </div>
+          </div>
+
+          <div class="infoBox">
+            <div class="icon">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </div>
+            <div class="row">
+              <span>Email:</span><span>Youremail@gmail.com</span>
+            </div>
+            <div class="row"><span>Skype:</span><span>@Yourusername</span></div>
+            <div class="row">
+              <span>Telegram:</span><span>@Yourusername</span>
+            </div>
+          </div>
+
+          <div class="infoBox">
+            <div class="icon">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+            </div>
+            <div class="row">
+              <span>Support Services:</span><span>15369</span>
+            </div>
+            <div class="row">
+              <span>Office:</span><span>+58 (021)356 587 235</span>
+            </div>
+            <div class="row">
+              <span>Personal:</span><span>+58 (021)356 587 235</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="siteFooter" id="footer">
+      <div class="footerBrands">
+        <img src="images/footer_7.png" alt="logo1" class="brandLogo" />
+        <img src="images/footer_6.png" alt="logo2" class="brandLogo" />
+        <img src="images/footer_5.png" alt="logo3" class="brandLogo" />
+        <img src="images/footer_4.png" alt="logo4" class="brandLogo" />
+      </div>
+
+      <div class="footerGrid">
+        <div class="footerLeft">
+          <img src="images/logo.png" alt="glasses" class="glasses" />
+
+          <div class="rating">
+            <img src="images/footer_1.jpg" alt="rating1" class="ratingImg" />
+          </div>
+
+          <div class="rating">
+            <img src="images/footer_2.jpg" alt="rating2" class="ratingImg" />
+          </div>
+
+          <div class="rating">
+            <img src="images/footer_3.jpg" alt="rating3" class="ratingImg" />
+          </div>
+        </div>
+
+        <div class="footerCol">
+          <h2>Quick Links</h2>
+          <a href="#">Home</a>
+          <a href="#">Skills</a>
+          <a href="#">Education</a>
+          <a href="#">Projects</a>
+          <a href="#recommendations">Recommendations</a>
+        </div>
+
+        <div class="footerCol">
+          <h2>Portfolio</h2>
+          <a href="#">Frontend Development</a>
+          <a href="#">Backend Development</a>
+          <a href="#">Website Design</a>
+          <a href="#">Machine Learning</a>
+          <a href="#">Problem Solving &amp; DSA</a>
+        </div>
+
+        <div class="footerCol">
+          <h2>Connect</h2>
+
+          <div class="socialItem">
+            <img src="images/social_1.png" alt="linkedin" class="socialImg" />
+          </div>
+
+          <div class="socialItem">
+            <img src="images/social_2.png" alt="instagram" class="socialImg" />
+          </div>
+
+          <div class="socialItem">
+            <img src="images/social_3.png" alt="facebook" class="socialImg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footerBottom">
+        <span>©</span> 2024 Copyright, All Right Reserved
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
