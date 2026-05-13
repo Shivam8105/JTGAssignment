@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menuToggle"),
     menu = document.getElementById("menu"),
     track = document.getElementById("sliderTrack"),
-    dotsWrap = document.getElementById("dots"),
-    prevBtn = document.getElementById("prevBtn"),
-    nextBtn = document.getElementById("nextBtn"),
+    dotsWrap = document.getElementById("sliderDots"),
     slides = track ? [...track.querySelectorAll(".slide")] : [];
 
   if (menuToggle && menu) {
@@ -23,63 +21,64 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  if (!track || !dotsWrap || !slides.length) return;
+  if (!track || !slides.length) return;
 
   const GAP = 18;
-  let index = 0,
-    startX = 0,
-    down = false;
+  const origSlideCount = slides.length;
+  const visibleCount = 3;
+  const dotCount = Math.min(5, origSlideCount);
+  const startClones = slides.slice(-visibleCount).map((slide) => slide.cloneNode(true));
+  const endClones = slides.slice(0, visibleCount).map((slide) => slide.cloneNode(true));
 
-  const slideWidth = () => slides[0].getBoundingClientRect().width + GAP;
-  const maxIndex = () =>
-    Math.max(
-      0,
-      slides.length - Math.max(1, Math.floor(((track.closest(".sliderWindow")?.clientWidth || 0) + GAP) / slideWidth()))
-    );
+  startClones.forEach((slide) => track.insertBefore(slide, track.firstChild));
+  endClones.forEach((slide) => track.appendChild(slide));
+
+  let index = visibleCount;
+
+  const allSlides = [...track.querySelectorAll(".slide")];
+  const slideWidth = () => allSlides[visibleCount].getBoundingClientRect().width + GAP;
+  const dots = [];
+
+  if (dotsWrap) {
+    dotsWrap.innerHTML = "";
+    for (let i = 0; i < dotCount; i++) {
+      const dot = document.createElement("span");
+      dot.className = "sliderDot";
+      dotsWrap.appendChild(dot);
+      dots.push(dot);
+    }
+  }
+
+  const setActiveDot = () => {
+    if (!dots.length) return;
+    const realIndex = ((index - visibleCount) % origSlideCount + origSlideCount) % origSlideCount;
+    const activeDot = realIndex % dotCount;
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("active", dotIndex === activeDot);
+    });
+  };
 
   const update = () => {
-    index = Math.max(0, Math.min(index, maxIndex()));
-    track.style.transition = "transform .4s ease";
+    track.style.transition = "transform 0.6s ease";
     track.style.transform = `translateX(-${slideWidth() * index}px)`;
-    [...dotsWrap.children].forEach((dot, i) => dot.classList.toggle("active", i === index));
+    setActiveDot();
   };
 
-  const buildDots = () => {
-    dotsWrap.innerHTML = "";
-    for (let i = 0; i <= maxIndex(); i++) {
-      const dot = document.createElement("div");
-      dot.className = `dot${i === index ? " active" : ""}`;
-      dot.addEventListener("click", () => {
-        index = i;
-        update();
-      });
-      dotsWrap.appendChild(dot);
+  track.addEventListener("transitionend", () => {
+    if (index === origSlideCount + visibleCount) {
+      track.style.transition = "none";
+      index = visibleCount;
+      track.style.transform = `translateX(-${slideWidth() * index}px)`;
+      setActiveDot();
     }
+  });
+
+  const autoSlide = () => {
+    index++;
+    update();
   };
 
-  buildDots();
-  nextBtn?.addEventListener("click", () => { index += 1; update(); });
-  prevBtn?.addEventListener("click", () => { index -= 1; update(); });
-
-  track.addEventListener("touchstart", (e) => {
-    down = true;
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-
-  track.addEventListener("touchend", (e) => {
-    if (!down) return;
-    down = false;
-    const diff = e.changedTouches[0].clientX - startX;
-    if (diff < -50) index += 1;
-    if (diff > 50) index -= 1;
-    update();
-  });
-
-  window.addEventListener("resize", () => {
-    track.style.transition = "none";
-    buildDots();
-    update();
-  });
-
+  setInterval(autoSlide, 1000);
   update();
 });
